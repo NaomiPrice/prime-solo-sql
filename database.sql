@@ -1,7 +1,12 @@
--- How do you get all users from Chicago?
+-- 1-How do you get all users from Chicago?
 SELECT * FROM "accounts" WHERE "city" LIKE 'chicago';
 
--- How do you get all users with usernames that contain the letter a?
+-- 2-How do you get all users with usernames that contain the letter a?
 SELECT * FROM "accounts" WHERE "username" LIKE '%a%';
 
+-- 3-The bank is giving a new customer bonus! How do you update all records with an 
+-- account balance of 0.00 and a transactions_attempted of 0? Give them a new account balance of 10.00.
+UPDATE "accounts" SET "account_balance" = 10.00 WHERE "transactions_attempted" = 0 AND "account_balance" = 0.00;
 
+-- 4-How do you select all users that have attempted 9 or more transactions?
+SELECT * FROM "accounts" WHERE "transactions_attempted" >= 9;
